@@ -3,6 +3,7 @@ A baseball tracking system built with Python and OpenCV and SciPy to analyze vid
 
 
 **Dependencies**
+
 The following are required to run this project:
 
 Python 3.9 or later
@@ -15,6 +16,7 @@ The program also uses Python's built-in math and random modules.
 
 
 **Installing**
+
 Download the repository from GitHub.
 Install the required dependencies using:
 
@@ -26,6 +28,7 @@ Verify that the HFOV constant matches your camera's horizontal field of view.
 
 
 **Executing the Program**
+
 Open a terminal in the project directory.
 Run the main Python script:
 
