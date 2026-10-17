@@ -229,7 +229,7 @@ def add_to_balls(current_circle_data):
         balls.append(current_circle_data)
 
 
-video_file = 'demo_clip.mp4'
+video_file = 'Demo_Clip.mp4'
 
 
 cap2 = cv2.VideoCapture(video_file)
