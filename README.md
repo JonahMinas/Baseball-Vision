@@ -2,7 +2,7 @@
 A baseball tracking system built with Python and OpenCV and SciPy to analyze video and estimate exit velocity, launch angle and distance traveled using computer vision and projectile motion modeling.
 
 
-Dependencies
+#Dependencies
 The following are required to run this project:
 
 Python 3.9 or later
@@ -14,7 +14,7 @@ An estimate of the camera's horizontal field of view (HFOV).
 The program also uses Python's built-in math and random modules.
 
 
-Installing
+#Installing
 Download the repository from GitHub.
 Install the required dependencies using:
 
@@ -25,7 +25,7 @@ Open the Python script and update the video_file variable to the path of your vi
 Verify that the HFOV constant matches your camera's horizontal field of view.
 
 
-Executing Program
+#Executing the Program
 Open a terminal in the project directory.
 Run the main Python script:
 
