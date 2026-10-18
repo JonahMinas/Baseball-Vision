@@ -42,8 +42,8 @@ def calculate_speed(inches, fps, frames):
 
 
 def find_launch_angle(ball1, ball2):
-    x1, y1, z1 = ball1[0]
-    x2, y2, z2 = ball2[0]
+    x1, y1, z1 = ball1
+    x2, y2, z2 = ball2
     theta = math.atan((y2-y1)/math.sqrt((x2-x1)**2 + (z2-z1)**2))
     launch_angle = math.degrees(theta)
     return launch_angle
@@ -81,7 +81,7 @@ def calculate_baseball_distance(exit_velo_mph, launch_angle_deg):
     v0_mps = exit_velo_mph * 0.44704       
     angle_rad = np.radians(launch_angle_deg) 
 
-    y0 = [0, v0_mps * np.cos(angle_rad), 3, v0_mps * np.sin(angle_rad)]
+    y0 = [0, v0_mps * np.cos(angle_rad), 1, v0_mps * np.sin(angle_rad)]
 
     def baseball_motion(t, y):
         x, vx, z, vz = y
@@ -141,7 +141,7 @@ def calculate_distance_3d(ball1, ball2, width, height, hfov):
     return distance, d1, d2, p1, p2
 
 
-# Using RANSAC circle fitting to fit circles to ball instead of countouring with bounding rectangle or min enclosing circle
+# 9/7 Using RANSAC circle fitting to fit circles to ball instead of countouring with bounding rectangle or min enclosing circle
 def find_ball_from_mask(mask_image, draw_image, max_expected_radius=300, iterations=500, tolerance=2.0):
     global finished_balls
 
@@ -229,7 +229,7 @@ def add_to_balls(current_circle_data):
         balls.append(current_circle_data)
 
 
-video_file = 'Demo_Clip.mp4'
+video_file = 'c:/Users/drjpm/OneDrive/Desktop/Jonah Programming/Open CV/Velo_Test_13.5.mov'
 
 
 cap2 = cv2.VideoCapture(video_file)
@@ -441,7 +441,7 @@ while cap.isOpened():
 
             
             detected_speed = calculate_speed(total_distance[0], fps, ball2[2]-ball1[2])
-            launch_angle = find_launch_angle(ball2, ball1)
+            launch_angle = find_launch_angle(total_distance[3], total_distance[4])
             distance = calculate_baseball_distance(detected_speed, launch_angle)
             text1 = f"MPH: {detected_speed}"
             text2 = f"Launch Angle: {launch_angle}"
